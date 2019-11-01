@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    
+    <package name="default" extends="struts-default">
+    
+    	<action name="index">
+            <result>/index.jsp</result>
+        </action>
+        
+		<action name="registeruser" class="org.apache.struts.portal.action.RegisterAction" method="execute">
+			<result name="success">/thankyou.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+		<action name="report" class="org.apache.struts.portal.action.ReportAction">
+			<result name="REPORT">/report.jsp</result>
+		</action>
+		<action name="updatedetails" class="org.apache.struts.portal.action.UpdateAction">
+			<result name="UPDATE">/update.jsp</result>
+		</action>
+		<action name="deleterecord" class="org.apache.struts.portal.action.DeleteAction">
+			<result name="DELETE">/delete.jsp</result>
+		</action>
+		
+		<action name="loginuser" class="org.apache.struts.portal.action.LoginAction" method="loginexecute">
+			<result name="Admin">/adminpage.jsp</result>
+			<result name="User">/home.jsp</result>
+			<result name="invalid_email">/invalid_email.jsp</result>
+			<result name="invalid_password">/invalid_password.jsp</result>
+		</action>
+		
+		<action name="resetpassword" class="org.apache.struts.portal.action.PasswordResetAction" method="execute">
+			<result name="RESET">/passwordResetConfirmation.jsp</result>
+			<result name="ERROR">/passwordReset.jsp</result>
+		</action>
+		
+		<action name="searchProfile" class="org.apache.struts.portal.action.SearchProfileAction">
+			<result name="SEARCHPROFILE">/searchProfile.jsp</result>
+			<result name="HOME">/home.jsp</result>
+		</action>
+		
+		<action name="logout" class="org.apache.struts.portal.action.LogoutAction" method="execute">
+			<result name="LOGOUT">/index.jsp</result>
+		</action>
+		
+		<action name="viewProfile" class="org.apache.struts.portal.action.ViewProfileAction" method="execute">
+			<result name="VIEWPROFILE">/viewProfile.jsp</result>
+		</action>
+		
+		<action name="sendEmail" class="org.apache.struts.portal.action.SendEmailAction">
+		<result name="success">/sendemail.jsp</result>
+		<result name="input">/sendemail.jsp</result>		
+		</action>
+		
+		<action name="createjob" class="org.apache.struts.portal.action.CreateJobAction" method="execute">
+			<result name="success">/createJob.jsp</result>
+		</action>
+		<action name="jobreport" class="org.apache.struts.portal.action.JobReportAction">
+			<result name="REPORT">/jobReport.jsp</result>
+		</action>
+		<action name="updatejobdetails" class="org.apache.struts.portal.action.UpdateJobAction">
+			<result name="UPDATE">/updateJob.jsp</result>
+		</action>
+		<action name="deletejobrecord" class="org.apache.struts.portal.action.DeleteJobAction">
+			<result name="DELETE">/deleteJob.jsp</result>
+		</action>
+		
+		<action name="viewJobPost" class="org.apache.struts.portal.action.JobReportAction">
+			<result name="REPORT">/viewJobPost.jsp</result>
+		</action>
+	</package>
+
+</struts>
